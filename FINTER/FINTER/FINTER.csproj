@@ -58,6 +58,18 @@
     <Compile Include="Lagrange\FormLagrange.Designer.cs">
       <DependentUpon>FormLagrange.cs</DependentUpon>
     </Compile>
+    <Compile Include="NG Progresivo\NGProgresivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NG Progresivo\NGProgresivo.Designer.cs">
+      <DependentUpon>NGProgresivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NG Regresivo\NGRegresivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NG Regresivo\NGRegresivo.Designer.cs">
+      <DependentUpon>NGRegresivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
@@ -65,6 +77,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lagrange\FormLagrange.resx">
       <DependentUpon>FormLagrange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NG Progresivo\NGProgresivo.resx">
+      <DependentUpon>NGProgresivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NG Regresivo\NGRegresivo.resx">
+      <DependentUpon>NGRegresivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,9 +106,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NG Progresivo\" />
-    <Folder Include="NG Regresivo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
-﻿namespace FINTER.Lagrange
+﻿namespace FINTER.NG_Progresivo
 {
-    partial class FormLagrange
+    partial class NGProgresivo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PolinomioResultante = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.PolinomioResultante = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(86, 165);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Mostrar Pasos";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // PolinomioResultante
             // 
@@ -38,29 +47,20 @@
             this.PolinomioResultante.Location = new System.Drawing.Point(92, 73);
             this.PolinomioResultante.Name = "PolinomioResultante";
             this.PolinomioResultante.Size = new System.Drawing.Size(106, 13);
-            this.PolinomioResultante.TabIndex = 0;
+            this.PolinomioResultante.TabIndex = 2;
             this.PolinomioResultante.Text = "Polinomio Resultante";
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(86, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Mostrar Pasos";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // FormLagrange
+            // NGProgresivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PolinomioResultante);
-            this.Name = "FormLagrange";
-            this.Text = "Lagrange";
-            this.Load += new System.EventHandler(this.FormLagrange_Load);
+            this.Name = "NGProgresivo";
+            this.Text = "NGProgresivo";
+            this.Load += new System.EventHandler(this.NGProgresivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,7 +68,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label PolinomioResultante;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label PolinomioResultante;
+
     }
 }

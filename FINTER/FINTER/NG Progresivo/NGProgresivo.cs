@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FINTER.NG_Progresivo
+{
+    public partial class NGProgresivo : Form
+    {
+        private List<PointF> listaDePuntos;
+
+        public NGProgresivo()
+        {
+            InitializeComponent();
+        }
+
+        public NGProgresivo(List<PointF> listaDePuntos)
+        {
+            InitializeComponent();
+            this.listaDePuntos = listaDePuntos;
+            PointF point = listaDePuntos.First();
+            Console.WriteLine(point);
+            calcularPolinomioNGProgresivo();
+        }
+
+        private void NGProgresivo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calcularPolinomioNGProgresivo()
+        {
+
+        }
+    }
+}

@@ -15,3 +15,5 @@ C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.ex
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.pdb
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.FormPrincipal.resources
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Lagrange.FormLagrange.resources
+C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Progresivo.NGProgresivo.resources
+C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources

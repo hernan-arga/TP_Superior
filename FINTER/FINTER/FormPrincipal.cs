@@ -12,14 +12,16 @@ namespace FINTER
 {
     public partial class FormPrincipal : Form
     {
+        private List<PointF> listaDeTuplasDePuntos;
+
         public FormPrincipal()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Lagrange_Click(object sender, EventArgs e)
         {
-            List<PointF> listaDeTuplasDePuntos;
+            //List<PointF> listaDeTuplasDePuntos;
 
             String puntos = campoDeValores.Text;
             listaDeTuplasDePuntos = paresador(puntos);
@@ -68,6 +70,24 @@ namespace FINTER
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void NGProgresivo_Click(object sender, EventArgs e)
+        {
+            String puntos = campoDeValores.Text;
+            listaDeTuplasDePuntos = paresador(puntos);
+
+            Form NGProgresivo = new NG_Progresivo.NGProgresivo(listaDeTuplasDePuntos);
+            NGProgresivo.ShowDialog();
+        }
+
+        private void NGRegresivo_Click(object sender, EventArgs e)
+        {
+            String puntos = campoDeValores.Text;
+            listaDeTuplasDePuntos = paresador(puntos);
+
+            Form NGRegresivo = new NG_Regresivo.NGRegresivo(listaDeTuplasDePuntos);
+            NGRegresivo.ShowDialog();
         }
     }
 }
