@@ -37,5 +37,15 @@ namespace FINTER.NG_Progresivo
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PolinomioResultante_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

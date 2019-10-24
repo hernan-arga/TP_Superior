@@ -43,7 +43,7 @@ namespace FINTER
         //Parseador de string a pointf
         private PointF StringToPointF(String cadena)
         {
-            string[] separadas = cadena.Split('-');
+            string[] separadas = cadena.Split(';');
             string valorX = separadas[0];
             string valorY = separadas[1].TrimEnd('\n');
             float x; float y;

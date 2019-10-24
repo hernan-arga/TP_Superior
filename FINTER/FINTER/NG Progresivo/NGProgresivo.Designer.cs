@@ -40,6 +40,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Mostrar Pasos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PolinomioResultante
             // 
@@ -50,6 +51,7 @@
             this.PolinomioResultante.TabIndex = 2;
             this.PolinomioResultante.Text = "Polinomio Resultante";
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PolinomioResultante.Click += new System.EventHandler(this.PolinomioResultante_Click);
             // 
             // NGProgresivo
             // 

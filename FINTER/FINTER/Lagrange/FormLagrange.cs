@@ -53,7 +53,7 @@ namespace FINTER.Lagrange
 			{
                 polinomioFinal = sumarPolinomios(polinomioFinal, listaDeFactoresDelPolinomioFinal.ElementAt(i));
 			}
-            PolinomioResultante.Text = PolinomyToString(polinomioFinal);
+            PolinomioResultante.Text = "P(x) = "+PolinomyToString(polinomioFinal);
 
             /*foreach (var l in listaDeFactoresDelPolinomioFinal)
             {
@@ -157,10 +157,26 @@ namespace FINTER.Lagrange
             {
                 if (i > 0) sb.Append(" + ");
                 sb.Append(p[i].ToString());
-                if (i > 0) sb.Append("x^").Append(i.ToString());
+                if (i > 0) sb.Append(" x^").Append(i.ToString());
             }
             return sb.ToString();
 
+        }
+
+        private void MostrarPasos_Click(object sender, EventArgs e)
+        {
+            int PosicionTop = MostrarPasos.Location.Y+40;
+            foreach (var l in listaDeLs)
+            {
+                System.Windows.Forms.Label label = new System.Windows.Forms.Label();
+                this.Controls.Add(label);
+                label.Location = new Point(MostrarPasos.Location.X, PosicionTop);
+                PosicionTop += 20;
+                label.Text = PolinomyToString(l);
+                label.BringToFront();
+
+                //label.p
+            }
         }
 
     }

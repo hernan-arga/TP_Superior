@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.PolinomioResultante = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MostrarPasos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PolinomioResultante
             // 
             this.PolinomioResultante.AutoSize = true;
-            this.PolinomioResultante.Location = new System.Drawing.Point(92, 73);
+            this.PolinomioResultante.Location = new System.Drawing.Point(92, 23);
             this.PolinomioResultante.Name = "PolinomioResultante";
             this.PolinomioResultante.Size = new System.Drawing.Size(106, 13);
             this.PolinomioResultante.TabIndex = 0;
             this.PolinomioResultante.Text = "Polinomio Resultante";
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // MostrarPasos
             // 
-            this.button1.Location = new System.Drawing.Point(86, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Mostrar Pasos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.MostrarPasos.Location = new System.Drawing.Point(86, 62);
+            this.MostrarPasos.Name = "MostrarPasos";
+            this.MostrarPasos.Size = new System.Drawing.Size(112, 23);
+            this.MostrarPasos.TabIndex = 1;
+            this.MostrarPasos.Text = "Mostrar Pasos";
+            this.MostrarPasos.UseVisualStyleBackColor = true;
+            this.MostrarPasos.Click += new System.EventHandler(this.MostrarPasos_Click);
             // 
             // FormLagrange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.MostrarPasos);
             this.Controls.Add(this.PolinomioResultante);
             this.Name = "FormLagrange";
             this.Text = "Lagrange";
@@ -69,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label PolinomioResultante;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MostrarPasos;
     }
 }
