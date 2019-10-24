@@ -1,6 +1,6 @@
 ﻿namespace FINTER.NG_Regresivo
 {
-    partial class NGRegresivo
+    partial class NGPss
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Mostrar Pasos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PolinomioResultante
             // 
@@ -50,17 +51,18 @@
             this.PolinomioResultante.TabIndex = 2;
             this.PolinomioResultante.Text = "Polinomio Resultante";
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PolinomioResultante.Click += new System.EventHandler(this.PolinomioResultante_Click);
             // 
-            // NGRegresivo
+            // NGPss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(351, 320);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PolinomioResultante);
-            this.Name = "NGRegresivo";
+            this.Name = "NGPss";
             this.Text = "NGRegresivo";
-            this.Load += new System.EventHandler(this.NGRegresivo_Load);
+            this.Load += new System.EventHandler(this.NGProgresivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

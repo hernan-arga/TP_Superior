@@ -41,6 +41,7 @@
             this.PolinomioResultante.TabIndex = 0;
             this.PolinomioResultante.Text = "Polinomio Resultante";
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PolinomioResultante.Click += new System.EventHandler(this.PolinomioResultante_Click);
             // 
             // MostrarPasos
             // 

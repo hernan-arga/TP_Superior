@@ -124,7 +124,7 @@ namespace FINTER.Lagrange
             }
             return result;
         }
-
+     
         private double[] sumarPolinomios(double[] a, double[] b)
         {
 
@@ -177,6 +177,11 @@ namespace FINTER.Lagrange
 
                 //label.p
             }
+        }
+
+        private void PolinomioResultante_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

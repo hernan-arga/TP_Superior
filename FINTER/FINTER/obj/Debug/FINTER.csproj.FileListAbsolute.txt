@@ -17,3 +17,15 @@ C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Fo
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Lagrange.FormLagrange.resources
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Progresivo.NGProgresivo.resources
 C:\Users\Hernan\Desktop\TPSuperior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\bin\Debug\FINTER.exe.config
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.exe
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.pdb
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\bin\Debug\FINTER.exe
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\bin\Debug\FINTER.pdb
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.csprojResolveAssemblyReference.cache
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.FormPrincipal.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Lagrange.FormLagrange.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Progresivo.NGProgresivo.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Properties.Resources.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.csproj.GenerateResource.Cache

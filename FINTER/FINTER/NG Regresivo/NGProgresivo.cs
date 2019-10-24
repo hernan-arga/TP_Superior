@@ -9,26 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace FINTER.NG_Progresivo
+namespace FINTER.NG_Regresivo
 {
-    public partial class NGProgresivo : Form
+    public partial class NGPss : Form
     {
         List<double> listaDeDiferencias;
         private List<PointF> listaDePuntos;
         List<double> diferenciasProgesivas;
 
-        public NGProgresivo()
+        public NGPss()
         {
             InitializeComponent();
         }
 
-        public NGProgresivo(List<PointF> listaDePuntos)
+        public NGPss(List<PointF> listaDePuntos)
         {
             InitializeComponent();
             this.listaDePuntos = listaDePuntos;
             PointF point = listaDePuntos.First();
             Console.WriteLine(point);
-            calcularPolinomioNGProgresivo();
+            calcularPolinomioNGRegresivo();
         }
 
         private void NGProgresivo_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace FINTER.NG_Progresivo
 
         }
 
-        private void calcularPolinomioNGProgresivo()
+        private void calcularPolinomioNGRegresivo()
         {
             listaDeDiferencias = calcularDiferencias();
             diferenciasProgesivas = agarrarProgresivas();
