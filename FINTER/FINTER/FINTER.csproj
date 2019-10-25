@@ -64,11 +64,11 @@
     <Compile Include="NG Progresivo\NGProgresivo.Designer.cs">
       <DependentUpon>NGProgresivo.cs</DependentUpon>
     </Compile>
-    <Compile Include="NG Regresivo\NGProgresivo.cs">
+    <Compile Include="NG Regresivo\NGRegresivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NG Regresivo\NGProgresivo.Designer.cs">
-      <DependentUpon>NGProgresivo.cs</DependentUpon>
+    <Compile Include="NG Regresivo\NGRegresivo.Designer.cs">
+      <DependentUpon>NGRegresivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="NG Progresivo\NGProgresivo.resx">
       <DependentUpon>NGProgresivo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NG Regresivo\NGProgresivo.resx">
-      <DependentUpon>NGProgresivo.cs</DependentUpon>
+    <EmbeddedResource Include="NG Regresivo\NGRegresivo.resx">
+      <DependentUpon>NGRegresivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

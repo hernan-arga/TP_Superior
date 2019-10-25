@@ -26,6 +26,6 @@ C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj
 C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.FormPrincipal.resources
 C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Lagrange.FormLagrange.resources
 C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Progresivo.NGProgresivo.resources
-C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources
 C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Properties.Resources.resources
 C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.csproj.GenerateResource.Cache
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources

@@ -155,7 +155,15 @@ namespace FINTER.Lagrange
             var sb = new StringBuilder();
             for (int i = 0; i < p.Length; i++)
             {
-                if (i > 0) sb.Append(" + ");
+                if (p[i] > 0)
+                {
+                    if (i > 0) sb.Append(" + ");
+                }
+
+                if (p[i] < 0)
+                {
+                    if (i > 0) sb.Append(" ");
+                }
                 sb.Append(p[i].ToString());
                 if (i > 0) sb.Append(" x^").Append(i.ToString());
             }

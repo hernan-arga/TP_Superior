@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace FINTER.NG_Regresivo
 {
-    public partial class NGPss : Form
+    public partial class NGRegresivo : Form
     {
         List<double> listaDeDiferencias;
         private List<PointF> listaDePuntos;
-        List<double> diferenciasProgesivas;
+        List<double> diferenciasRegresivas;
 
-        public NGPss()
+        public NGRegresivo()
         {
             InitializeComponent();
         }
 
-        public NGPss(List<PointF> listaDePuntos)
+        public NGRegresivo(List<PointF> listaDePuntos)
         {
             InitializeComponent();
             this.listaDePuntos = listaDePuntos;
@@ -31,7 +31,7 @@ namespace FINTER.NG_Regresivo
             calcularPolinomioNGRegresivo();
         }
 
-        private void NGProgresivo_Load(object sender, EventArgs e)
+        private void NGRegresivo_Load(object sender, EventArgs e)
         {
 
         }
@@ -39,9 +39,9 @@ namespace FINTER.NG_Regresivo
         private void calcularPolinomioNGRegresivo()
         {
             listaDeDiferencias = calcularDiferencias();
-            diferenciasProgesivas = agarrarProgresivas();
+            diferenciasRegresivas = agarrarRegresivas();
 
-            double[] polinomio = {listaDePuntos[0].Y};
+            double[] polinomio = {listaDePuntos[listaDePuntos.Count-1].Y};
             for (int i = 0; i < listaDePuntos.Count()-1; i++)
             {
                 polinomio = sumarPolinomios(polinomio, armarPolinomioGradoSiguiente(i));
@@ -53,8 +53,8 @@ namespace FINTER.NG_Regresivo
 
         private double[] armarPolinomioGradoSiguiente(int indice)
         {
-            double[] polinomio = {diferenciasProgesivas[indice]};
-            for (int i = 0; i <= indice; i++)
+            double[] polinomio = {diferenciasRegresivas[indice]};
+            for (int i = listaDePuntos.Count() - 1; i >= listaDePuntos.Count()-1-indice; i--)
             {
                 double[] siguientePolinomio = new double[] { -listaDePuntos[i].X, 1 };
                 polinomio = multiplicarPolinomios(siguientePolinomio, polinomio);
@@ -107,7 +107,15 @@ namespace FINTER.NG_Regresivo
             {
                 if (p[i] != 0)
                 {
-                    if (i > 0) sb.Append(" + ");
+                    if (p[i] > 0) 
+                    {
+                        if (i > 0) sb.Append(" + ");
+                    }
+
+                    if (p[i] < 0)
+                    {
+                        if (i > 0) sb.Append(" ");
+                    }
                     sb.Append(p[i].ToString());
                     if (i > 0) sb.Append(" x^").Append(i.ToString());
                 }
@@ -149,24 +157,24 @@ namespace FINTER.NG_Regresivo
             return unaDiferencia;
         }
 
-        private List<double> agarrarProgresivas()
+        private List<double> agarrarRegresivas()
         {
-            List<double> diferenciasProgesivas = new List<double>();
+            List<double> diferenciasRegesivas = new List<double>();
             int indice = 0;
-            diferenciasProgesivas.Add(listaDeDiferencias[0]);
-            for (int i = 1; i < listaDePuntos.Count - 1; i++)
+            //diferenciasProgesivas.Add(listaDeDiferencias[0]);
+            for (int i = 2; i < listaDePuntos.Count+1; i++)
             {
-                diferenciasProgesivas.Add(listaDeDiferencias[indice + listaDePuntos.Count - i]);
+                diferenciasRegesivas.Add(listaDeDiferencias[indice + listaDePuntos.Count -2]);
                 indice = indice + listaDePuntos.Count - i;
             }
-            return diferenciasProgesivas;
+            return diferenciasRegesivas;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
             int PosicionTop = button1.Location.Y + 40;
-            for(int i = 0; i<diferenciasProgesivas.Count;i++)
+            for(int i = 0; i<diferenciasRegresivas.Count;i++)
             {
                 System.Windows.Forms.Label label = new System.Windows.Forms.Label();
                 this.Controls.Add(label);
@@ -187,7 +195,7 @@ namespace FINTER.NG_Regresivo
                 }
                 sb.Append("] = ");
                // sb.Append(diferenciasProgesivas[i].ToString());
-                label.Text = sb.ToString() + diferenciasProgesivas[i].ToString();
+                label.Text = sb.ToString() + diferenciasRegresivas[i].ToString();
                 label.BringToFront();
 
                 //label.p

@@ -1,6 +1,6 @@
 ﻿namespace FINTER.NG_Regresivo
 {
-    partial class NGPss
+    partial class NGRegresivo
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +62,7 @@
             this.Controls.Add(this.PolinomioResultante);
             this.Name = "NGPss";
             this.Text = "NGRegresivo";
-            this.Load += new System.EventHandler(this.NGProgresivo_Load);
+            this.Load += new System.EventHandler(this.NGRegresivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

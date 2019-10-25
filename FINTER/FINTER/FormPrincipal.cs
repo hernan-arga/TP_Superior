@@ -86,7 +86,7 @@ namespace FINTER
             String puntos = campoDeValores.Text;
             listaDeTuplasDePuntos = paresador(puntos);
 
-            Form NGRegresivo = new NG_Progresivo.NGProgresivo(listaDeTuplasDePuntos);
+            Form NGRegresivo = new NG_Regresivo.NGRegresivo(listaDeTuplasDePuntos);
             NGRegresivo.ShowDialog();
         }
     }
