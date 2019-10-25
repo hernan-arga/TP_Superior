@@ -13,7 +13,8 @@ namespace FINTER.Lagrange
     public partial class FormLagrange : Form
     {
         private List<PointF> listaDePuntos;
-        List<double[]> listaDeLs;
+        private List<double[]> listaDeLs;
+        private double[] polinomioFinal = { 0 };
 
         public FormLagrange()
         {
@@ -48,14 +49,14 @@ namespace FINTER.Lagrange
                 listaDeFactoresDelPolinomioFinal.Add( multiplicarPolinomios(listaDeLs.ElementAt(i), imagen) );
             }            
 
-           double[] polinomioFinal = {0};
+          
            for (int i = 0; i < listaDeFactoresDelPolinomioFinal.Count; i++)
 			{
                 polinomioFinal = sumarPolinomios(polinomioFinal, listaDeFactoresDelPolinomioFinal.ElementAt(i));
 			}
             PolinomioResultante.Text = "P(x) = "+PolinomyToString(polinomioFinal);
 
-            /*foreach (var l in listaDeFactoresDelPolinomioFinal)
+            /*foreach (var l in listaDeLs)
             {
                 Console.WriteLine(PolinomyToString(l));
             }*/
@@ -174,16 +175,38 @@ namespace FINTER.Lagrange
         private void MostrarPasos_Click(object sender, EventArgs e)
         {
             int PosicionTop = MostrarPasos.Location.Y+40;
+            int numeroDeL = 0;
             foreach (var l in listaDeLs)
             {
                 System.Windows.Forms.Label label = new System.Windows.Forms.Label();
                 this.Controls.Add(label);
                 label.Location = new Point(MostrarPasos.Location.X, PosicionTop);
                 PosicionTop += 20;
-                label.Text = PolinomyToString(l);
+                label.Text = "L" + numeroDeL + " = " + PolinomyToString(l);
+                label.Width = label.Width*5;
                 label.BringToFront();
+                numeroDeL += 1;
+            }
+        }
 
-                //label.p
+        private void Especializador_Click(object sender, EventArgs e)
+        {
+            double k;
+            double resultado = 0;
+
+            if (double.TryParse(ingresarK.Text, out k))
+            {
+                for (int i = 0; i < polinomioFinal.Count(); i++)
+                {                    
+                    resultado += polinomioFinal[i] * Math.Pow(k, i);
+                    Console.WriteLine(resultado);
+                    Console.WriteLine();
+                }
+                Especializacion.Text = "P(" + k.ToString() + ") = " + resultado.ToString("N4"); 
+            }
+            else
+            {
+                MessageBox.Show("El K ingresado no es valido");
             }
         }
 
