@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\LagrangeSolver.cs" />
+    <Compile Include="Entidades\NGProgresivoSolver.cs" />
+    <Compile Include="Entidades\NGRegresivoSolver.cs" />
+    <Compile Include="Entidades\Parser.cs" />
+    <Compile Include="Entidades\PolySolver.cs" />
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +62,12 @@
     </Compile>
     <Compile Include="Lagrange\FormLagrange.Designer.cs">
       <DependentUpon>FormLagrange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModPuntos\ModificarPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModPuntos\ModificarPuntos.Designer.cs">
+      <DependentUpon>ModificarPuntos.cs</DependentUpon>
     </Compile>
     <Compile Include="NG Progresivo\NGProgresivo.cs">
       <SubType>Form</SubType>
@@ -77,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lagrange\FormLagrange.resx">
       <DependentUpon>FormLagrange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModPuntos\ModificarPuntos.resx">
+      <DependentUpon>ModificarPuntos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NG Progresivo\NGProgresivo.resx">
       <DependentUpon>NGProgresivo.cs</DependentUpon>

@@ -33,6 +33,7 @@
             this.Especializador = new System.Windows.Forms.Button();
             this.ingresarK = new System.Windows.Forms.TextBox();
             this.Especializacion = new System.Windows.Forms.Label();
+            this.modificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PolinomioResultante
@@ -82,11 +83,22 @@
             this.Especializacion.TabIndex = 4;
             this.Especializacion.Text = "P(K) =";
             // 
+            // modificar
+            // 
+            this.modificar.Location = new System.Drawing.Point(18, 39);
+            this.modificar.Name = "modificar";
+            this.modificar.Size = new System.Drawing.Size(112, 23);
+            this.modificar.TabIndex = 5;
+            this.modificar.Text = "Modificar Puntos";
+            this.modificar.UseVisualStyleBackColor = true;
+            this.modificar.Click += new System.EventHandler(this.modificar_Click);
+            // 
             // FormLagrange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 261);
+            this.Controls.Add(this.modificar);
             this.Controls.Add(this.Especializacion);
             this.Controls.Add(this.ingresarK);
             this.Controls.Add(this.Especializador);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Button Especializador;
         private System.Windows.Forms.TextBox ingresarK;
         private System.Windows.Forms.Label Especializacion;
+        private System.Windows.Forms.Button modificar;
     }
 }

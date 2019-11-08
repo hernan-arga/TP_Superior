@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FINTER.Entidades;
 
 
 namespace FINTER.NG_Regresivo
@@ -16,6 +17,8 @@ namespace FINTER.NG_Regresivo
         List<double> listaDeDiferencias;
         private List<PointF> listaDePuntos;
         List<double> diferenciasRegresivas;
+        private double[] polinomioFinal = { 0 };
+        private NGRegresivoSolver NGR = new NGRegresivoSolver();
 
         public NGRegresivo()
         {
@@ -38,147 +41,23 @@ namespace FINTER.NG_Regresivo
 
         private void calcularPolinomioNGRegresivo()
         {
-            listaDeDiferencias = calcularDiferencias();
-            diferenciasRegresivas = agarrarRegresivas();
+            NGR.listaDePuntos = this.listaDePuntos;
+            NGR.resolverPolinomio();
 
-            double[] polinomio = {listaDePuntos[listaDePuntos.Count-1].Y};
-            for (int i = 0; i < listaDePuntos.Count()-1; i++)
-            {
-                polinomio = sumarPolinomios(polinomio, armarPolinomioGradoSiguiente(i));
-            }
-            PolinomioResultante.Text = "P(x) = " + PolinomyToString(polinomio);
-            
-            
+            listaDeDiferencias = NGR.listaDeDiferencias;
+            diferenciasRegresivas = NGR.diferenciasRegresivas;
+            polinomioFinal = NGR.polinomioFinal;
+            PolinomioResultante.Text = NGR.polinomioResultante;
         }
 
-        private double[] armarPolinomioGradoSiguiente(int indice)
+        private void mostrarPasos_Click(object sender, EventArgs e)
         {
-            double[] polinomio = {diferenciasRegresivas[indice]};
-            for (int i = listaDePuntos.Count() - 1; i >= listaDePuntos.Count()-1-indice; i--)
-            {
-                double[] siguientePolinomio = new double[] { -listaDePuntos[i].X, 1 };
-                polinomio = multiplicarPolinomios(siguientePolinomio, polinomio);
-                
-            }
-            return polinomio;
-        }
-        private double[] multiplicarPolinomios(double[] a, double[] b)
-        {
-            var result = new double[a.Length + b.Length - 1];
-            for (int i = 0; i < a.Length; i++)
-            {
-                for (int j = 0; j < b.Length; j++)
-                {
-                    result[i + j] += a[i] * b[j];
-                }
-            }
-            return result;
-        }
-
-        private double[] sumarPolinomios(double[] a, double[] b)
-        {
-
-            var result = new double[Math.Max(a.Length, b.Length)];
-            for (int i = 0; i < result.Length; i++)
-            {
-
-                double val1 = 0;
-                if (a.Length > i)
-                {
-                    val1 = a[i];
-                }
-
-                double val2 = 0;
-                if (b.Length > i)
-                {
-                    val2 = b[i];
-                }
-
-                result[i] = val1 + val2;
-
-            }
-            return result;
-        }
-
-        private string PolinomyToString(double[] p)
-        {
-            var sb = new StringBuilder();
-            for (int i = 0; i < p.Length; i++)
-            {
-                if (p[i] != 0)
-                {
-                    if (p[i] > 0) 
-                    {
-                        if (i > 0) sb.Append(" + ");
-                    }
-
-                    if (p[i] < 0)
-                    {
-                        if (i > 0) sb.Append(" ");
-                    }
-                    sb.Append(p[i].ToString());
-                    if (i > 0) sb.Append(" x^").Append(i.ToString());
-                }
-            }
-
-            return sb.ToString();
-
-        }
-       
-
-        private List<double> calcularDiferencias()
-        {
-            double unaDiferencia;
-            List<double> listaDeDiferencias = new List<double>();
-            for (int i = 1; i < listaDePuntos.Count; i++)
-            {
-                for(int j = 0; j<listaDePuntos.Count-i; j++)
-                {
-                    //unaDiferencia = listaDePuntos[j + i].Y - listaDePuntos[j].Y;
-                    unaDiferencia = calcularUnaDiferencia(i,j);
-                    listaDeDiferencias.Add(unaDiferencia);
-               
-                }
-            }
-            return listaDeDiferencias;
-        }
-
-        private double calcularUnaDiferencia(int grado, int indice)
-        {
-            double unaDiferencia = 0;
-            if (grado > 1)
-            {
-                unaDiferencia = (calcularUnaDiferencia(grado - 1, indice + 1) - calcularUnaDiferencia(grado - 1, indice))/(listaDePuntos[indice +grado].X-listaDePuntos[indice].X);
-            }
-            else
-            {
-                unaDiferencia = (listaDePuntos[indice + 1].Y - listaDePuntos[indice].Y) / (listaDePuntos[indice + 1].X - listaDePuntos[indice].X);
-            }
-            return unaDiferencia;
-        }
-
-        private List<double> agarrarRegresivas()
-        {
-            List<double> diferenciasRegesivas = new List<double>();
-            int indice = 0;
-            //diferenciasProgesivas.Add(listaDeDiferencias[0]);
-            for (int i = 2; i < listaDePuntos.Count+1; i++)
-            {
-                diferenciasRegesivas.Add(listaDeDiferencias[indice + listaDePuntos.Count -2]);
-                indice = indice + listaDePuntos.Count - i;
-            }
-            return diferenciasRegesivas;
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int PosicionTop = button1.Location.Y + 40;
+            int PosicionTop = mostrarPasos.Location.Y + 40;
             for(int i = 0; i<diferenciasRegresivas.Count;i++)
             {
                 System.Windows.Forms.Label label = new System.Windows.Forms.Label();
                 this.Controls.Add(label);
-                label.Location = new Point(button1.Location.X, PosicionTop);
+                label.Location = new Point(mostrarPasos.Location.X, PosicionTop);
                
                 PosicionTop += 20;
                 
