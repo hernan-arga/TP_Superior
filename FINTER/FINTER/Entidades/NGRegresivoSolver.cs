@@ -7,15 +7,22 @@ using System.Drawing;
 
 namespace FINTER.Entidades
 {
-    class NGRegresivoSolver : PolySolver
+    public class NGRegresivoSolver : PolySolver
     {
         public List<double> listaDeDiferencias;
         public List<double> diferenciasRegresivas;
-        public string polinomioResultante = "";
+
+        public NGRegresivoSolver()
+        {
+            nombre_metodo = 3;
+        }
 
         override public void resolverPolinomio()
         {
-             listaDeDiferencias = calcularDiferencias();
+            double[] reset = { 0 };
+            polinomioFinal = reset;
+
+            listaDeDiferencias = calcularDiferencias();
             diferenciasRegresivas = agarrarRegresivas();
 
             double[] polinomio = {listaDePuntos[listaDePuntos.Count-1].Y};

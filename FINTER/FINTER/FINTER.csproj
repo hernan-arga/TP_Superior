@@ -57,6 +57,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interpolacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interpolacion.Designer.cs">
+      <DependentUpon>Interpolacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lagrange\FormLagrange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interpolacion.resx">
+      <DependentUpon>Interpolacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lagrange\FormLagrange.resx">
       <DependentUpon>FormLagrange.cs</DependentUpon>

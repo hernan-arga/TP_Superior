@@ -96,8 +96,8 @@ namespace FINTER.Lagrange
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            Form modifP = new ModificarPuntos.ModificarPuntos(lagrange, listaDePuntos);
-            modifP.Show();
+           // Form modifP = new ModificarPuntos.ModificarPuntos(lagrange, listaDePuntos);
+           // modifP.Show();
         }
 
     }

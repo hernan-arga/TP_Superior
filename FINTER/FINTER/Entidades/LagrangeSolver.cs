@@ -7,13 +7,20 @@ using System.Drawing;
 
 namespace FINTER.Entidades
 {
-    class LagrangeSolver : PolySolver
+    public class LagrangeSolver : PolySolver
     {
         public List<double[]> listaDeLs;
-        public string polinomioResultante = "";
 
-       override public void resolverPolinomio()
+        public LagrangeSolver()
         {
+            nombre_metodo = 1;
+        }
+
+        override public void resolverPolinomio()
+        {
+            double[] reset = { 0 };
+            polinomioFinal = reset;
+
             listaDeLs = calcularLs();
 
             List<double[]> listaDeFactoresDelPolinomioFinal = new List<double[]>();
@@ -40,14 +47,14 @@ namespace FINTER.Entidades
 
        private List<double[]> calcularLs()
        {
-           List<double[]> listaDeLs = new List<double[]>();
+           List<double[]> _ListaDeLs = new List<double[]>();
 
            for (int i = 0; i < listaDePuntos.Count; i++)
            {
-               listaDeLs.Add(calcularUnL(i));
+               _ListaDeLs.Add(calcularUnL(i));
            }
 
-           return listaDeLs;
+           return _ListaDeLs;
        }
 
        private double[] calcularUnL(int indice)

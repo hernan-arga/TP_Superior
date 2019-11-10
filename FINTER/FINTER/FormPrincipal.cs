@@ -27,9 +27,10 @@ namespace FINTER
             String puntos = campoDeValores.Text;
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
+            LagrangeSolver lagrange = new LagrangeSolver();
 
-            Form lagrange = new Lagrange.FormLagrange(listaDeTuplasDePuntos);   
-            lagrange.ShowDialog();
+            Form interpolacion = new Interpolacion(lagrange, listaDeTuplasDePuntos);   
+            interpolacion.ShowDialog();
             //System.Console.WriteLine(listaDePuntos.F);
         }
 
@@ -49,9 +50,10 @@ namespace FINTER
             String puntos = campoDeValores.Text;
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
+            NGProgresivoSolver NGP = new NGProgresivoSolver();
 
-            Form NGProgresivo = new NG_Progresivo.NGProgresivo(listaDeTuplasDePuntos);
-            NGProgresivo.ShowDialog();
+            Form interpolacion = new Interpolacion(NGP, listaDeTuplasDePuntos);
+            interpolacion.ShowDialog();
         }
 
         private void NGRegresivo_Click(object sender, EventArgs e)
@@ -60,9 +62,10 @@ namespace FINTER
             String puntos = campoDeValores.Text;
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
+            NGRegresivoSolver NGR = new NGRegresivoSolver();
 
-            Form NGRegresivo = new NG_Regresivo.NGRegresivo(listaDeTuplasDePuntos);
-            NGRegresivo.ShowDialog();
+            Form interpolacion = new Interpolacion(NGR, listaDeTuplasDePuntos);
+            interpolacion.ShowDialog();
         }
     }
 }

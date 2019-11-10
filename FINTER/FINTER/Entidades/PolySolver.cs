@@ -11,6 +11,8 @@ namespace FINTER.Entidades
     {
         public double[] polinomioFinal = { 0 };
         public List<PointF> listaDePuntos;
+        public int nombre_metodo;
+        public string polinomioResultante = "";
 
 
         public double[] multiplicarPolinomios(double[] a, double[] b)
@@ -65,8 +67,11 @@ namespace FINTER.Entidades
                 {
                     if (i > 0) sb.Append(" ");
                 }
-                sb.Append(p[i].ToString());
-                if (i > 0) sb.Append(" x^").Append(i.ToString());
+                if (p[i] != 0)
+                {
+                    sb.Append(p[i].ToString());
+                    if (i > 0) sb.Append(" x^").Append(i.ToString()).Append(" ");
+                }
             }
             return sb.ToString();
 

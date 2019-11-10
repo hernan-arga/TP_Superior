@@ -8,14 +8,22 @@ using FINTER.Entidades;
 
 namespace FINTER.Entidades
 {
-    class NGProgresivoSolver : PolySolver
+    public class NGProgresivoSolver : PolySolver
     {
         public List<double> listaDeDiferencias;
         public List<double> diferenciasProgesivas;
-        public string polinomioResultante = "";
+
+
+        public NGProgresivoSolver()
+        {
+            nombre_metodo = 2;
+        }
 
         override public void resolverPolinomio()
         {
+            double[] reset = { 0 };
+            polinomioFinal = reset;
+
             listaDeDiferencias = calcularDiferencias();
             diferenciasProgesivas = agarrarProgresivas();
 
