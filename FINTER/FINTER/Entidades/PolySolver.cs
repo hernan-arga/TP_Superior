@@ -96,6 +96,19 @@ namespace FINTER.Entidades
             return this.EspecializarEnK(punto.X) == punto.Y;
         }
 
+        public int gradoPolinomio(double[] polinomio)
+        {
+            int j = 0;
+            for(int i = 0; i < polinomio.Count(); i++)
+            {
+                if (polinomio[i] != 0)
+                {
+                    j = i;
+                }
+            }
+            return j;
+        }
+
         abstract public void resolverPolinomio();
     }
 }
