@@ -100,5 +100,10 @@ namespace FINTER.Lagrange
            // modifP.Show();
         }
 
+        private void Finalizar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

@@ -36,12 +36,13 @@ namespace FINTER.Entidades
             {
                 polinomioFinal = sumarPolinomios(polinomioFinal, listaDeFactoresDelPolinomioFinal.ElementAt(i));
             }
-            polinomioResultante = "P(x) = " + PolinomyToString(polinomioFinal);
 
-            /*foreach (var l in listaDeLs)
+            for (int i = 0; i < polinomioFinal.Count(); i++)
             {
-                Console.WriteLine(PolinomyToString(l));
-            }*/
+                polinomioFinal[i] = Math.Round(polinomioFinal[i], 4);
+            }
+
+            polinomioResultante = "P(x) = " + PolinomyToString(polinomioFinal);
             
         }
 
@@ -89,6 +90,7 @@ namespace FINTER.Entidades
            for (int i = 0; i < polinomioNumerador.Length; i++)
            {
                polinomioNumerador[i] /= denominador;
+               //polinomioNumerador[i] = Math.Round(polinomioNumerador[i] / denominador, 4);
            }
 
            return polinomioNumerador;

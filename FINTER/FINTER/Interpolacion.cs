@@ -213,5 +213,10 @@ namespace FINTER
             }
         }
 
+        private void Finalizar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

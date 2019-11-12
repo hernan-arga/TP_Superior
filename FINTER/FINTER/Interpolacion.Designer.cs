@@ -35,6 +35,7 @@
             this.MostrarPasos = new System.Windows.Forms.Button();
             this.PolinomioResultante = new System.Windows.Forms.Label();
             this.resultModif = new System.Windows.Forms.Label();
+            this.Finalizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // modificar
@@ -103,11 +104,22 @@
             this.resultModif.Text = "Resultado";
             this.resultModif.Visible = false;
             // 
+            // Finalizar
+            // 
+            this.Finalizar.Location = new System.Drawing.Point(416, 8);
+            this.Finalizar.Name = "Finalizar";
+            this.Finalizar.Size = new System.Drawing.Size(75, 23);
+            this.Finalizar.TabIndex = 13;
+            this.Finalizar.Text = "Finalizar";
+            this.Finalizar.UseVisualStyleBackColor = true;
+            this.Finalizar.Click += new System.EventHandler(this.Finalizar_Click);
+            // 
             // Interpolacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 380);
+            this.Controls.Add(this.Finalizar);
             this.Controls.Add(this.resultModif);
             this.Controls.Add(this.modificar);
             this.Controls.Add(this.Especializacion);
@@ -131,6 +143,7 @@
         private System.Windows.Forms.Button MostrarPasos;
         public System.Windows.Forms.Label PolinomioResultante;
         public System.Windows.Forms.Label resultModif;
+        private System.Windows.Forms.Button Finalizar;
 
     }
 }

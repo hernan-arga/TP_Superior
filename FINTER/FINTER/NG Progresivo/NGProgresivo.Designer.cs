@@ -30,6 +30,7 @@
         {
             this.mostrarPasos = new System.Windows.Forms.Button();
             this.PolinomioResultante = new System.Windows.Forms.Label();
+            this.Finalizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mostrarPasos
@@ -53,11 +54,21 @@
             this.PolinomioResultante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PolinomioResultante.Click += new System.EventHandler(this.PolinomioResultante_Click);
             // 
+            // Finalizar
+            // 
+            this.Finalizar.Location = new System.Drawing.Point(255, 12);
+            this.Finalizar.Name = "Finalizar";
+            this.Finalizar.Size = new System.Drawing.Size(84, 23);
+            this.Finalizar.TabIndex = 7;
+            this.Finalizar.Text = "Finalizar";
+            this.Finalizar.UseVisualStyleBackColor = true;
+            // 
             // NGProgresivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 320);
+            this.Controls.Add(this.Finalizar);
             this.Controls.Add(this.mostrarPasos);
             this.Controls.Add(this.PolinomioResultante);
             this.Name = "NGProgresivo";
@@ -72,6 +83,7 @@
 
         private System.Windows.Forms.Button mostrarPasos;
         private System.Windows.Forms.Label PolinomioResultante;
+        private System.Windows.Forms.Button Finalizar;
 
     }
 }
