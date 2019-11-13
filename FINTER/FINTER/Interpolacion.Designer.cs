@@ -104,7 +104,6 @@
             this.resultModif.TabIndex = 12;
             this.resultModif.Text = "Resultado";
             this.resultModif.Visible = false;
-            
             // 
             // Finalizar
             // 
@@ -121,11 +120,10 @@
             this.equidistantes.AutoSize = true;
             this.equidistantes.Location = new System.Drawing.Point(33, 41);
             this.equidistantes.Name = "equidistantes";
-            this.equidistantes.Size = new System.Drawing.Size(106, 13);
+            this.equidistantes.Size = new System.Drawing.Size(105, 13);
             this.equidistantes.TabIndex = 14;
-            this.equidistantes.Text = "Puntos Equidistantes";
+            this.equidistantes.Text = "Polinomio Calculado:";
             this.equidistantes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // Interpolacion
             // 
