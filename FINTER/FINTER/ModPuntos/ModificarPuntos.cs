@@ -81,7 +81,16 @@ namespace FINTER.ModificarPuntos
             }
             origen.listaDePuntos = listaDePuntosModificada;
             origen.metodoUtilizado = polysolver;
+            if (origen.metodoUtilizado.sonEquidistantes())
+                origen.equidistantes.Text = "Los Puntos son Equidistantes";
+            else
+                origen.equidistantes.Text = "Los Puntos no son Equidistantes";
             this.Close();
+        }
+
+        private void ModificarPuntos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

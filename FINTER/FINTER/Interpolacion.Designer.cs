@@ -36,6 +36,7 @@
             this.PolinomioResultante = new System.Windows.Forms.Label();
             this.resultModif = new System.Windows.Forms.Label();
             this.Finalizar = new System.Windows.Forms.Button();
+            this.equidistantes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // modificar
@@ -103,6 +104,7 @@
             this.resultModif.TabIndex = 12;
             this.resultModif.Text = "Resultado";
             this.resultModif.Visible = false;
+            
             // 
             // Finalizar
             // 
@@ -114,11 +116,23 @@
             this.Finalizar.UseVisualStyleBackColor = true;
             this.Finalizar.Click += new System.EventHandler(this.Finalizar_Click);
             // 
+            // equidistantes
+            // 
+            this.equidistantes.AutoSize = true;
+            this.equidistantes.Location = new System.Drawing.Point(33, 41);
+            this.equidistantes.Name = "equidistantes";
+            this.equidistantes.Size = new System.Drawing.Size(106, 13);
+            this.equidistantes.TabIndex = 14;
+            this.equidistantes.Text = "Puntos Equidistantes";
+            this.equidistantes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+           
+            // 
             // Interpolacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 380);
+            this.Controls.Add(this.equidistantes);
             this.Controls.Add(this.Finalizar);
             this.Controls.Add(this.resultModif);
             this.Controls.Add(this.modificar);
@@ -129,6 +143,7 @@
             this.Controls.Add(this.PolinomioResultante);
             this.Name = "Interpolacion";
             this.Text = "Interpolacion";
+            this.Load += new System.EventHandler(this.Interpolacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +159,7 @@
         public System.Windows.Forms.Label PolinomioResultante;
         public System.Windows.Forms.Label resultModif;
         private System.Windows.Forms.Button Finalizar;
+        public System.Windows.Forms.Label equidistantes;
 
     }
 }

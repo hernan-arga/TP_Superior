@@ -50,3 +50,5 @@ C:\Users\Hernan\Desktop\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Progresivo
 C:\Users\Hernan\Desktop\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.NG_Regresivo.NGRegresivo.resources
 C:\Users\Hernan\Desktop\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Properties.Resources.resources
 C:\Users\Hernan\Desktop\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.csproj.GenerateResource.Cache
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.Interpolacion.resources
+C:\Users\Matias\Desktop\Tp de superior\TP_Superior\TP_Superior\FINTER\FINTER\obj\Debug\FINTER.ModificarPuntos.ModificarPuntos.resources

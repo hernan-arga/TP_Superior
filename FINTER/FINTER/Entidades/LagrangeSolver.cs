@@ -96,5 +96,7 @@ namespace FINTER.Entidades
            return polinomioNumerador;
 
        }
+       
     }
+
 }

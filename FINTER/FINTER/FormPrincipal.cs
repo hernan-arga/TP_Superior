@@ -28,10 +28,13 @@ namespace FINTER
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
             LagrangeSolver lagrange = new LagrangeSolver();
+            if (listaDeTuplasDePuntos.Count >= 2)
+            {
+                Form interpolacion = new Interpolacion(lagrange, listaDeTuplasDePuntos);
 
-            Form interpolacion = new Interpolacion(lagrange, listaDeTuplasDePuntos);   
-            interpolacion.ShowDialog();
-            //System.Console.WriteLine(listaDePuntos.F);
+                interpolacion.ShowDialog();
+            }
+                //System.Console.WriteLine(listaDePuntos.F);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,9 +54,12 @@ namespace FINTER
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
             NGProgresivoSolver NGP = new NGProgresivoSolver();
-
-            Form interpolacion = new Interpolacion(NGP, listaDeTuplasDePuntos);
-            interpolacion.ShowDialog();
+            if (listaDeTuplasDePuntos.Count >= 2)
+            {
+                 Form interpolacion = new Interpolacion(NGP, listaDeTuplasDePuntos);
+            
+                  interpolacion.ShowDialog();
+             }
         }
 
         private void NGRegresivo_Click(object sender, EventArgs e)
@@ -63,9 +69,12 @@ namespace FINTER
             Parser parser = new Parser();
             listaDeTuplasDePuntos = parser.paresador(puntos);
             NGRegresivoSolver NGR = new NGRegresivoSolver();
-
-            Form interpolacion = new Interpolacion(NGR, listaDeTuplasDePuntos);
-            interpolacion.ShowDialog();
+            if (listaDeTuplasDePuntos.Count >= 2)
+            {  
+                Form interpolacion = new Interpolacion(NGR, listaDeTuplasDePuntos);
+            
+                interpolacion.ShowDialog();
+            }
         }
     }
 }

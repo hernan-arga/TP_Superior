@@ -34,15 +34,18 @@ namespace FINTER
         {
             InitializeComponent();
             this.listaDePuntos = listaPuntos;
+
             metodoUtilizado = lagrange;
-            calcularPolinomioLagrange();
+            if (listaDePuntos.Count != 0)
+                 calcularPolinomioLagrange();
         }
         public Interpolacion(NGProgresivoSolver NGP, List<PointF> listaPuntos)
         {
             InitializeComponent();
             this.listaDePuntos = listaPuntos;
             metodoUtilizado = NGP;
-            calcularPolinomioNGProgresivo();
+            if (listaDePuntos.Count != 0)
+                 calcularPolinomioNGProgresivo();
         }
 
         public Interpolacion(NGRegresivoSolver NGR, List<PointF> listaPuntos)
@@ -50,14 +53,18 @@ namespace FINTER
             InitializeComponent();
             this.listaDePuntos = listaPuntos;
             metodoUtilizado = NGR;
-            calcularPolinomioNGRegresivo();
+            if (listaDePuntos.Count != 0)
+                calcularPolinomioNGRegresivo();
         }
 
         private void calcularPolinomioLagrange()
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-
+            if (metodoUtilizado.sonEquidistantes())
+                equidistantes.Text = "Los Puntos son Equidistantes";
+            else
+                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeLs = ((LagrangeSolver) metodoUtilizado).listaDeLs;
             polinomioFinal = ((LagrangeSolver)metodoUtilizado).polinomioFinal;
             PolinomioResultante.Text = ((LagrangeSolver)metodoUtilizado).polinomioResultante;
@@ -73,7 +80,10 @@ namespace FINTER
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-
+            if (metodoUtilizado.sonEquidistantes())
+                equidistantes.Text = "Los Puntos son Equidistantes";
+            else
+                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeDiferencias = ((NGProgresivoSolver)metodoUtilizado).listaDeDiferencias;
             diferenciasProgesivas = ((NGProgresivoSolver)metodoUtilizado).diferenciasProgesivas;
             polinomioFinal = ((NGProgresivoSolver)metodoUtilizado).polinomioFinal;
@@ -84,7 +94,10 @@ namespace FINTER
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-
+            if (metodoUtilizado.sonEquidistantes())
+                equidistantes.Text = "Los Puntos son Equidistantes";
+            else
+                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeDiferencias = ((NGRegresivoSolver)metodoUtilizado).listaDeDiferencias;
             diferenciasRegresivas = ((NGRegresivoSolver)metodoUtilizado).diferenciasRegresivas;
             polinomioFinal = ((NGRegresivoSolver)metodoUtilizado).polinomioFinal;
@@ -217,6 +230,13 @@ namespace FINTER
         {
             Close();
         }
+
+        public void Interpolacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
     }
 }

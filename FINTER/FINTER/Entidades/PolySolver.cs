@@ -95,6 +95,16 @@ namespace FINTER.Entidades
         {
             return this.EspecializarEnK(punto.X) == punto.Y;
         }
+        public bool sonEquidistantes()
+        {
+            float primerDistancia = listaDePuntos.ElementAt(1).X - listaDePuntos.ElementAt(0).X;
+            for (int i = 2; i < listaDePuntos.Count; i++)
+            {
+                if (primerDistancia != listaDePuntos.ElementAt(i).X - listaDePuntos.ElementAt(i - 1).X)
+                    return false;
+            }
+            return true;
+        }
 
         public int gradoPolinomio(double[] polinomio)
         {

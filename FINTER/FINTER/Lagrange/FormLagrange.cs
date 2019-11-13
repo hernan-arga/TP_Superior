@@ -44,7 +44,7 @@ namespace FINTER.Lagrange
         {
             lagrange.listaDePuntos = this.listaDePuntos;
             lagrange.resolverPolinomio();
-
+            
             listaDeLs = lagrange.listaDeLs;
             polinomioFinal = lagrange.polinomioFinal;
             PolinomioResultante.Text = lagrange.polinomioResultante;

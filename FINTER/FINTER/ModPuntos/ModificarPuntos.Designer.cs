@@ -70,6 +70,7 @@
             this.Controls.Add(this.puntos);
             this.Name = "ModificarPuntos";
             this.Text = "ModificarPuntos";
+            this.Load += new System.EventHandler(this.ModificarPuntos_Load);
             this.ResumeLayout(false);
 
         }
