@@ -110,9 +110,9 @@
             this.equidistantes.AutoSize = true;
             this.equidistantes.Location = new System.Drawing.Point(24, 22);
             this.equidistantes.Name = "equidistantes";
-            this.equidistantes.Size = new System.Drawing.Size(106, 13);
+            this.equidistantes.Size = new System.Drawing.Size(102, 13);
             this.equidistantes.TabIndex = 7;
-            this.equidistantes.Text = "Puntos Equidistantes";
+            this.equidistantes.Text = "Polinomio Calculado";
             this.equidistantes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormLagrange

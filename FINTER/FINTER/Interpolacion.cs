@@ -61,10 +61,6 @@ namespace FINTER
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-            if (metodoUtilizado.sonEquidistantes())
-                equidistantes.Text = "Los Puntos son Equidistantes";
-            else
-                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeLs = ((LagrangeSolver) metodoUtilizado).listaDeLs;
             polinomioFinal = ((LagrangeSolver)metodoUtilizado).polinomioFinal;
             PolinomioResultante.Text = ((LagrangeSolver)metodoUtilizado).polinomioResultante;
@@ -80,10 +76,6 @@ namespace FINTER
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-            if (metodoUtilizado.sonEquidistantes())
-                equidistantes.Text = "Los Puntos son Equidistantes";
-            else
-                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeDiferencias = ((NGProgresivoSolver)metodoUtilizado).listaDeDiferencias;
             diferenciasProgesivas = ((NGProgresivoSolver)metodoUtilizado).diferenciasProgesivas;
             polinomioFinal = ((NGProgresivoSolver)metodoUtilizado).polinomioFinal;
@@ -94,10 +86,6 @@ namespace FINTER
         {
             metodoUtilizado.listaDePuntos = this.listaDePuntos;
             metodoUtilizado.resolverPolinomio();
-            if (metodoUtilizado.sonEquidistantes())
-                equidistantes.Text = "Los Puntos son Equidistantes";
-            else
-                equidistantes.Text = "Los Puntos no son Equidistantes";
             listaDeDiferencias = ((NGRegresivoSolver)metodoUtilizado).listaDeDiferencias;
             diferenciasRegresivas = ((NGRegresivoSolver)metodoUtilizado).diferenciasRegresivas;
             polinomioFinal = ((NGRegresivoSolver)metodoUtilizado).polinomioFinal;
@@ -107,6 +95,13 @@ namespace FINTER
         private void MostrarPasos_Click_1(object sender, EventArgs e)
         {
             int PosicionTop = MostrarPasos.Location.Y + 40;
+
+            if (metodoUtilizado.sonEquidistantes())
+                equidistantes.Text = "Los Puntos son Equidistantes\n El polinomio es de grado " +
+                    metodoUtilizado.gradoPolinomio(polinomioFinal);
+            else
+                equidistantes.Text = "Los Puntos no son Equidistantes\n El polinomio es de grado " +
+                    metodoUtilizado.gradoPolinomio(polinomioFinal);
 
             switch(metodoUtilizado.nombre_metodo)
             {

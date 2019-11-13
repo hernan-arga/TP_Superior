@@ -82,9 +82,11 @@ namespace FINTER.ModificarPuntos
             origen.listaDePuntos = listaDePuntosModificada;
             origen.metodoUtilizado = polysolver;
             if (origen.metodoUtilizado.sonEquidistantes())
-                origen.equidistantes.Text = "Los Puntos son Equidistantes";
+                origen.equidistantes.Text = "Los Puntos son Equidistantes\n El polinomio es de grado " +
+                    polysolver.gradoPolinomio(polysolver.polinomioFinal);
             else
-                origen.equidistantes.Text = "Los Puntos no son Equidistantes";
+                origen.equidistantes.Text = "Los Puntos no son Equidistantes\n El polinomio es de grado " +
+                    polysolver.gradoPolinomio(polysolver.polinomioFinal);
             this.Close();
         }
 
