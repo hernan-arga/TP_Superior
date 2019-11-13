@@ -42,52 +42,54 @@ namespace FINTER.ModificarPuntos
             listaDePuntosModificada = parser.paresador(puntos.Text);
 
             polysolver.listaDePuntos = listaDePuntosModificada;
+            if (polysolver.listaDePuntos.Count() > 1)
+            {
+                if (listaDePuntosModificada.Count() < listaDePuntosOriginal.Count())
+                {
+                    //Menos puntos, re hago el polinomio para saber si hay uno de menor grado
 
-            if (listaDePuntosModificada.Count() < listaDePuntosOriginal.Count())
-            {
-                //Menos puntos, re hago el polinomio para saber si hay uno de menor grado
-                
-                polysolver.resolverPolinomio();
-                if (polysolver.polinomioResultante.Count() == polinomioOriginal.Count())
-                {
-                    //No hubo cambios en el polinomio
-                    origen.resultModif.Text = "No hubo cambios en el Polinomio";
-                    origen.resultModif.Visible = true;
-                }
-                else
-                {
-                    //Cambio el Grado
-                    origen.resultModif.Text = "Cambio el grado del Polinomio al tener menos puntos";
-                    origen.resultModif.Visible = true;
-                    origen.PolinomioResultante.Text = polysolver.polinomioResultante;
-                }
-            }
-            else
-            {
-                if (listaDePuntosModificada.All(punto => polysolver.puntoCumpleConPolinomio(punto)))
-                {
-                    //Cumplen con el Polinomio, se queda
-                    origen.resultModif.Text = "Los nuevos puntos cumplen con el polinomio";
-                    origen.resultModif.Visible = true;
-                }
-                else
-                {
                     polysolver.resolverPolinomio();
-                    //No cumplen con el Polinomio, creo uno nuevo
-                    origen.resultModif.Text = "Los nuevos puntos no cumplen con el polinomio, se calculo un nuevo polinomio";
-                    origen.resultModif.Visible = true;
-                    origen.PolinomioResultante.Text = polysolver.polinomioResultante;
+                    if (polysolver.polinomioResultante.Count() == polinomioOriginal.Count())
+                    {
+                        //No hubo cambios en el polinomio
+                        origen.resultModif.Text = "No hubo cambios en el Polinomio";
+                        origen.resultModif.Visible = true;
+                    }
+                    else
+                    {
+                        //Cambio el Grado
+                        origen.resultModif.Text = "Cambio el grado del Polinomio al tener menos puntos";
+                        origen.resultModif.Visible = true;
+                        origen.PolinomioResultante.Text = polysolver.polinomioResultante;
+                    }
                 }
+                else
+                {
+                    if (listaDePuntosModificada.All(punto => polysolver.puntoCumpleConPolinomio(punto)))
+                    {
+                        //Cumplen con el Polinomio, se queda
+                        origen.resultModif.Text = "Los nuevos puntos cumplen con el polinomio";
+                        origen.resultModif.Visible = true;
+                    }
+                    else
+                    {
+                        polysolver.resolverPolinomio();
+                        //No cumplen con el Polinomio, creo uno nuevo
+                        origen.resultModif.Text = "Los nuevos puntos no cumplen con el polinomio, se calculo un nuevo polinomio";
+                        origen.resultModif.Visible = true;
+                        origen.PolinomioResultante.Text = polysolver.polinomioResultante;
+                    }
+                }
+                origen.listaDePuntos = listaDePuntosModificada;
+                origen.metodoUtilizado = polysolver;
+                if (origen.metodoUtilizado.sonEquidistantes())
+                    origen.equidistantes.Text = "Los Puntos son Equidistantes\n El polinomio es de grado " +
+                        polysolver.gradoPolinomio(polysolver.polinomioFinal);
+                else
+                    origen.equidistantes.Text = "Los Puntos no son Equidistantes\n El polinomio es de grado " +
+                        polysolver.gradoPolinomio(polysolver.polinomioFinal);
+                this.Close();
             }
-            origen.listaDePuntos = listaDePuntosModificada;
-            origen.metodoUtilizado = polysolver;
-            if (origen.metodoUtilizado.sonEquidistantes())
-                origen.equidistantes.Text = "Los Puntos son Equidistantes\n El polinomio es de grado " +
-                    polysolver.gradoPolinomio(polysolver.polinomioFinal);
-            else
-                origen.equidistantes.Text = "Los Puntos no son Equidistantes\n El polinomio es de grado " +
-                    polysolver.gradoPolinomio(polysolver.polinomioFinal);
-            this.Close();
         }
 
         private void ModificarPuntos_Load(object sender, EventArgs e)
